@@ -9,8 +9,8 @@ This project completes the **DELETE operation** of a CRUD backend system.
 
 ---
 ## 📂 Project Structure
-```
-express-postgresql-crud-api
+```js
+Express-postgresql-crud-api
 │
 ├── db.js # PostgreSQL connection pool
 ├── delete.js # Express server & API routes
@@ -18,7 +18,7 @@ express-postgresql-crud-api
 └── README.md
 ```
 ## ⚙️ Configure the PostgreSQL connection pool (`db.js`)
-```
+```js
 const { Pool } = require('pg');
 const pool = new Pool({
    user: 'your_username',
@@ -33,7 +33,7 @@ const pool = new Pool({
 ```
 ## Create Your Express Server
 Create a file: delete.js
-```
+```js
 // delete.js
 const express = require('express');
 const pool = require('./db');
@@ -117,18 +117,18 @@ app.delete('/delemploye', async (req, res) => {
 GET /
 
 #### Response:
-```
+```js
 <h1>EXPRESS JS API</h1>
 ```
 ### 🔹 Delete Employee (URL Parameter)
 DELETE /delemploye/:id
 
 Example:
-```
+```js
 DELETE /delemploye/5
 ```
 #### Success Response:
-```
+```js
 {
   "message": "Employe item deleted successfully"
 }
@@ -138,13 +138,13 @@ DELETE /delemploye
 
 
 #### Request Body:
-```
+```js
 {
   "id": 5
 }
 ```
 #### Response:
-```
+```js
 {
   "status": "200",
   "message": "delete success"
@@ -155,14 +155,14 @@ DELETE /delemployeById
 
 
 #### Request Body:
-```
+```js
 {
   "id": 5
 }
 ```
-- Validation Rule
-- id is required
-```
+### Validation Rule
+#### Id is required
+```js
  Success Response
 {
   "status": "success",
